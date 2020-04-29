@@ -1,13 +1,13 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "alpine:latest",
+        "image": "centos:latest",
         "commit": true,
         "run_command": [ "-d", "-t", "-i", "{{.Image}}", "/bin/sh" ], 
         "changes": [
             "VOLUME /data",
             "WORKDIR /data",
-            "EXPOSE 80 443",
+            "EXPOSE 80 8080",
             "ENTRYPOINT [\"docker-entrypoint.sh\"]"
         ]
     }],
